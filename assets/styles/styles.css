@@ -1,0 +1,150 @@
+:root {
+  --dark-blue: #0a3871;
+  --cor-principal: #f3f5fc;
+  --light-blue: #d8dfe8;
+  --inter-font: "Inter", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--cor-principal);
+  font-family: var(--inter-font);
+}
+header {
+  margin-bottom: 5rem;
+  width: 60%;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+}
+header img {
+  width: 120px;
+  height: 48px;
+}
+
+.form__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70dvh;
+}
+.form__input {
+  width: 100%;
+  max-width: 577;
+  height: 64dvh;
+  border-color: #0a3871;
+  background: white;
+  outline: none;
+  font-family: var(--inter-font);
+  font-size: 3.2rem;
+  color: var(--dark-blue);
+  margin-bottom: 3rem;
+  overflow: auto;
+}
+::placeholder {
+  color: var(--dark-blue);
+}
+.alert__msg {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.form__btn {
+  background: var(--dark-blue);
+  color: white;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  width: 328px;
+  height: 67px;
+  border-radius: 24px;
+  border: 1px solid var(--dark-blue);
+  font-weight: 600;
+}
+.form__btn--secundary {
+  background: transparent;
+  color: var(--dark-blue);
+}
+.result {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  height: 92dvh;
+  border-radius: 32px;
+  max-width: 40rem;
+  width: 100%;
+  padding: 2rem 3rem;
+}
+.result__title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #343a40;
+}
+.result__img {
+  display: block;
+}
+.hiden {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .submit__container {
+    justify-content: center;
+  }
+  .result {
+    height: auto;
+    max-width: 624px;
+    margin-top: 2rem;
+    min-height: 186px;
+  }
+  header img {
+    width: 73px;
+  }
+}
+
+.loader {
+  width: 100px;
+  height: 45px;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  box-shadow: 0 0 0 50px;
+  clip-path: polygon(
+    -50px -20px,
+    10% -12px,
+    20% 0,
+    calc(50% - 15px) 0,
+    calc(50% - 10px) -20px,
+    calc(50% - 8px) -15px,
+    calc(50% + 8px) -15px,
+    calc(50% + 10px) -20px,
+    calc(50% + 15px) 0,
+    80% 0,
+    90% -12px,
+    calc(100% + 50px) -20px,
+    100% 80%,
+    calc(100% + 10px) calc(100% + 10px),
+    60% 100%,
+    50% calc(100% + 15px),
+    40% 100%,
+    -10px calc(100% + 10px),
+    0 80%
+  );
+}
+.loader:after {
+  animation: 19 1s infinite;
+  transform: perspective(300px) translateZ(0px);
+}
